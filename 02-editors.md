@@ -81,7 +81,7 @@ Upload these 3 files to the [`editors`](editors/) folder.
 
 What terminal editor will be your preferred choice of use? How did you make your decision?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> I chose to use vim since it is very effective for text-editing which which is most important for me at this point. Also, I find the commands and shortcuts to be less awkward compared to Emacs.
 
 --
 
@@ -89,6 +89,6 @@ What terminal editor will be your preferred choice of use? How did you make your
 
 What graphical editor will you use? How did you make your decision? What are some interesting features of your editor? What are some useful keyboard shortcuts for your editor? How do you customize your editor?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> I have Spyder (from Anaconda) and Sublime installed. I've been mostly using Sublime so far since it has a lot of helpful features and shortcuts (multiline editing with "Quick Find All", selection expanding). In regards to customizing my layout, I only use multiple windows in Sublime (rows/columns/grid).
 
  
