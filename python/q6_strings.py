@@ -18,8 +18,10 @@ def donuts(count):
     >>> donuts(99)
     'Number of donuts: many'
     """
-    raise NotImplementedError
-
+    if count > 9:
+        return 'Number of donuts: many'
+    else:
+        return 'Number of donuts: ' + str(count)
 
 def both_ends(s):
     """
@@ -37,7 +39,11 @@ def both_ends(s):
     >>> both_ends('xyz')
     'xyyz'
     """
-    raise NotImplementedError
+    if len(s) < 2:
+        return ''
+    else:
+        return str(s[:2]) + str(s[len(s)-2:])
+
 
 
 def fix_start(s):
@@ -56,9 +62,18 @@ def fix_start(s):
     >>> fix_start('donut')
     'donut'
     """
-    raise NotImplementedError
-
-
+    if len(s) >= 1:
+        new = []
+        new.append(s[0])
+        for i in s[1:]:
+            if i != s[0]:
+                new.append(i)
+            else:
+                new.append('*')
+        return new
+    else:
+        return ''
+    
 def mix_up(a, b):
     """
     Given strings a and b, return a single string with a and b
@@ -74,9 +89,8 @@ def mix_up(a, b):
     >>> mix_up('pezzy', 'firm')
     'fizzy perm'
     """
-    raise NotImplementedError
-
-
+    return str(b[:2]) + str(a[2:]) + ' ' + str(a[:2]) + str(b[2:])
+    #return b[:2]+a[2:],a[:2]+b[2:]
 def verbing(s):
     """
     Given a string, if its length is at least 3, add 'ing' to its end.
@@ -91,8 +105,12 @@ def verbing(s):
     >>> verbing('do')
     'do'
     """
-    raise NotImplementedError
-
+    if len(s) < 3:
+        return s
+    elif s[len(s)-3:] == 'ing':
+        return s + 'ly'
+    else:
+        return s + 'ing'
 
 def not_bad(s):
     """
@@ -111,13 +129,20 @@ def not_bad(s):
     >>> not_bad("It's bad yet not")
     "It's bad yet not"
     """
-    raise NotImplementedError
+    index_not = s.find('not')
+	if index_not != -1:
+		if s.find('bad') != -1:
+			index_bad = s.find('bad') + 3
+			if index_not < index_bad:
+				delete_bad = s[index_not:index_bad]
+				return s.replace(delete_bad, 'good')
+	return s 
 
 
 def front_back(a, b):
     """
     Consider dividing a string into two halves. If the length is even,
-    the front and back halves are the same length. If the length is
+        the front and back halves are the same length. If the length is
     odd, we'll say that the extra char goes in the front half. e.g.
     'abcde', the front half is 'abc', the back half 'de'. Given 2
     strings, a and b, return a string of the form a-front + b-front +
@@ -130,4 +155,13 @@ def front_back(a, b):
     >>> front_back('Kitten', 'Donut')
     'KitDontenut'
     """
-    raise NotImplementedError
+    half_a = int(len(a)/2)
+    half_b = int(len(b)/2)
+    if len(a) % 2 == 0 and len(b) % 2 == 0:
+        return a[:half_a] + b[:half_b] + a[half_a:] + b[half_b:]
+    elif len(a) % 2 == 1 and len(b) % 2 == 1:
+        return a[:half_a+1] + b[:half_b+1] + a[half_a+1:] + b[half_b+1:]
+    elif len(a) % 2 == 0 and len(b) % 2 == 1:
+        return a[:half_a] + b[:half_b+1] + a[half_a:] + b[half_b+1:]
+    elif len(a) % 2 == 1 and len(b) % 2 == 0:
+        return a[:half_a+1] + b[:half_b] + a[half_a+1:] + b[half_b:]
