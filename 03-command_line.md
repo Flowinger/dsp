@@ -19,8 +19,17 @@ Here's a list of items with which you should be familiar:
 
 Make a cheat sheet for yourself: a list of at least **ten** commands and what they do.  (Use the 8 items above and add a couple of your own.)  
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
-
+**pwd** print current working directory  
+**ls** list content of a directory  
+**mkdir** create new directory  
+**cd** change directory  
+**cp** copy a folder/file  
+**mv** move a folder/file  
+**find** find a file  
+**rm** delete a file  
+**cat** show content of a file  
+**touch** create/update a file  
+**dir /a** list all hidden files
 ---
 
 ### Q2.  List Files in Unix   
@@ -34,7 +43,20 @@ What do the following commands do:
 `ls -t`  
 `ls -Glp`  
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+
+`ls` list the content of a folder
+
+`ls -a` lists all files and folders in a directory
+
+`ls -l` detailed list of content in a folder
+
+`ls -lh` detailed list of content in a folder, human readable
+
+`ls -lah` detailed list of all files in a folder, human readable
+
+`ls -t` list with files in a folder based on timestamp, newest first
+
+`ls -Glp` detailed list of content in a folder, folders a highlighted blue with '/' at the end
 
 ---
 
@@ -42,7 +64,7 @@ What do the following commands do:
 
 Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) and pick 5 of your favorites:
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+> > ls -m, ls -R, ls -1p, ls -x, ls -c
 
 ---
 
@@ -50,7 +72,6 @@ Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) 
 
 What does `xargs` do? Give an example of how to use it.
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
-
+>> xargs is used to build and execute command lines from standard inputs. It is often used in combination with the `find` command - e.g. `find . name '*.txt' | xargs rm` searches for all text files and deletes them
  
 
