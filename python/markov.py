@@ -1,15 +1,39 @@
-#!/usr/bin/env python
+import sys
+import random
+from collections import defaultdict
 
-# Write a Markov text generator, [markov.py](python/markov.py). Your program should be called from the command line with two arguments: the name of a file containing text to read, and the number of words to generate. For example, if `chains.txt` contains the short story by Frigyes Karinthy, we could run:
+text = '/Users/Flowinger/text.txt'
+def markov(input):
+	with open(text, 'r') as file:
+		data = file.read().replace('\n', '')
+	data_split = data.split()
+	markov_dict = defaultdict()
+	for i in range(2, len(data_split)):
+		if (data_split[i-2], data_split[i-1]) not in markov_dict.keys():
+			markov_dict[(data_split[i-2], data_split[i-1])] = [data_split[i]]
+		else:
+			markov_dict[(data_split[i-2], data_split[i-1])].append(data_split[i])
+	return markov_dict
 
-# ```bash
-# ./markov.py chains.txt 40
-# ```
+def generate_sentence(markov_dict, num_words):
+	'''
+	markov_dict: input dictionary of a parsed text file
+	num_words: number of words that the output sentence should have
+	'''
+	# Start with capitalized words and without a period after the word
+	start = [key for key in markov_dict.keys() if key[0][0].isupper() and key[0][-1] != '.']
+	# Select starting word pair randomly
+	start_list = list(random.choice(start))
+	# Further add words randomly to the sentence
+	while len(start_list) < num_words:
+		try:
+			# Take the 2 prior words as keys and look which word follows
+			start_list.append(random.choice(markov_dict[(start_list[-2], start_list[-1])]))
+		except KeyError:
+			start_list += list(random.choice(markov_dict.keys()))
+	print(' '.join(start_list))
 
-# A possible output would be:
+if __name__ == '__main__':
+	markov_dict = markov(sys.argv[1])
+	generate_sentence(markov_dict, int(sys.argv[2]))
 
-# > show himself once more than the universe and what I often catch myself playing our well-connected game went on. Our friend was absolutely correct: nobody from the group needed this way. We never been as the Earth has the network of eternity.
-
-# There are design choices to make; feel free to experiment and shape the program as you see fit. Jeff Atwood's [Markov and You](http://blog.codinghorror.com/markov-and-you/) is a fun place to get started learning about what you're trying to make.
-
-> REPLACE THIS TEXT WITH YOUR PROGRAM
