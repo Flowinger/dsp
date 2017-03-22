@@ -2,9 +2,9 @@ import sys
 import random
 from collections import defaultdict
 
-text = '/Users/Flowinger/text.txt'
+
 def markov(input):
-	with open(text, 'r') as file:
+	with open(input, 'r') as file:
 		data = file.read().replace('\n', '')
 	data_split = data.split()
 	markov_dict = defaultdict()
@@ -37,3 +37,4 @@ if __name__ == '__main__':
 	markov_dict = markov(sys.argv[1])
 	generate_sentence(markov_dict, int(sys.argv[2]))
 
+# output: Their heads were the most foolish-looking things you ever saw, and they say under the sea lions keep themselves to themselves."Scoochnie! Ochen scoochnie!" ("I'm lonesome, very lonesome!") said Kotick. "Good sport, gentlemen?" The big things answered by bowing and waving
