@@ -50,11 +50,14 @@ How are Python lists and sets similar and different? Give examples of using both
   - Sets don't support indexing
   - Sets can only contain hashable objects
 - Examples: 
->> fridge = ['apple', 'eggs', 'meat', 'banana', 'apple', 'meat']
-food_types_available = ['meat', 'eggs', 'banana', 'apple']
-shopping_list = ['fish', 'eggs', 'banana']
-do_not_buy = food_types_available.intersection(fridge)
-  
+```
+fridge = ['apple', 'eggs', 'meat', 'banana', 'apple', 'meat']  
+food_types_available = set(fridge)  
+shopping_list = ['fish', 'eggs', 'banana']  
+do_not_buy = food_types_available.intersection(fridge)  
+print(do_not_buy)
+>> {'eggs', 'banana'}
+```
 - Performance:
   - Sets are faster than lists for searching since they are implemented using hash tables 
   - Set uses a hash function that maps to a certain bucket, Python implementations resize the hash table constantly
@@ -70,9 +73,9 @@ Describe Python's `lambda`. What is it, and what is it used for? Give at least o
 
 lambda is a way of creating anonymous functions (not bound to a name). It is often used with functions like filter(), map() and reduce(). They can have multiple parameters, execute an expression and return a value.
 Example:
->> sorted(['Hello', 'what', 'is', 'going', 'on', 'Mister'], key=(lambda word: len(word)))
-
-
+```
+sorted(['Hello', 'what', 'is', 'going', 'on', 'Mister'], key=(lambda word: len(word)))
+```
 ---
 
 ### Q4. List Comprehension, Map &amp; Filter
@@ -86,15 +89,19 @@ List comprehensions:
 - The same result can be achieved with the functions map and filter.
 
 Example list comprehension:  
->>multiplies = []  
-for x in range(20):    
+```
+multiplies = []  
+for x in range(20):  
 multiplies.append(x*4)  
-
+```
 Example map:
->> list(map(x*4,  multiplies))  
-
+```
+list(map(x*4,  multiplies))
+```
 Example filter: 
->> list(filter((lamba x: x > 0),  multiplies))  
+```
+list(filter((lamba x: x > 0),  multiplies))
+```
 ---
 
 ### Complete the following problems by editing the files below:
