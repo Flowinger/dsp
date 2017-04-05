@@ -21,6 +21,7 @@ This data is available in this file:  [faculty.csv](python/faculty.csv)
 
 ```
 {'MS': 2, 'ScD': 6, 'MPH': 2, 'BSEd': 1, 'JD': 1, 'MD': 1, 'PhD': 31, 'MA': 1}
+Number of titles: 37
 ```
 
 #### Q2. Find how many different titles there are, and their frequencies:  Ex:  Assistant Professor, Professor
@@ -39,7 +40,7 @@ Associate Professor of Biostatistics: 12, Assistant Professor of Biostatistics: 
 #### Q4. Find how many different email domains there are (Ex:  mail.med.upenn.edu, upenn.edu, email.chop.edu, etc.).  Print the list of unique email domains.
 
 ```
-['@cceb.med.upenn.edu', '@upenn.edu', '@email.chop.edu', '@mail.med.upenn.edu'] 
+{'@upenn.edu': 12, '@email.chop.edu': 1, '@mail.med.upenn.edu': 23, '@cceb.med.upenn.edu': 1}
 ```
 
 
