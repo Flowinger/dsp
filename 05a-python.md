@@ -13,12 +13,12 @@ For quick and easy interactive practice with Python, many people enjoy [Codecade
 How are Python lists and tuples similar and different? Which will work as keys in dictionaries? Why?
 
 - Similarities: 
-	• Lists and tuples are both sequence data types
-	• They support (negative) indexing and slicing operations
-	• They support slicing operations
-	• len() returns number of elements in sequence
-	• "for" loop, enumerate
-	• Count, index method
+	- Lists and tuples are both sequence data types
+	- They support (negative) indexing and slicing operations
+	- They support slicing operations
+	- len() returns number of elements in sequence
+	- "for" loop, enumerate
+	- Count, index method
 
 - Differences:
 	- Lists are enclosed in square brackets [], tuples in parentheses ()
@@ -50,10 +50,10 @@ How are Python lists and sets similar and different? Give examples of using both
   - Sets don't support indexing
   - Sets can only contain hashable objects
 - Examples: 
-  >> fridge = ['apple', 'eggs', 'meat', 'banana', 'apple', 'meat']
-  food_types_available = ['meat', 'eggs', 'banana', 'apple']
-  shopping_list = ['fish', 'eggs', 'banana']
-  do_not_buy = food_types_available.intersection(fridge)
+>> fridge = ['apple', 'eggs', 'meat', 'banana', 'apple', 'meat']
+food_types_available = ['meat', 'eggs', 'banana', 'apple']
+shopping_list = ['fish', 'eggs', 'banana']
+do_not_buy = food_types_available.intersection(fridge)
   
 - Performance:
   - Sets are faster than lists for searching since they are implemented using hash tables 
@@ -85,16 +85,16 @@ List comprehensions:
 - consists of for clause with a input sequence, 0 or more for/if clauses with a predicate, the clause contains an output expression
 - The same result can be achieved with the functions map and filter.
 
-Example list comprehension:
->>multiplies = []
->>	for x in range(20):
->>		multiplies.append(x*4)
+Example list comprehension:  
+>>multiplies = []  
+for x in range(20):    
+multiplies.append(x*4)  
 
 Example map:
->> list(map(x*4,  multiplies))
-Example filter:
->> list(filter((lamba x: x > 0),  multiplies))
+>> list(map(x*4,  multiplies))  
 
+Example filter: 
+>> list(filter((lamba x: x > 0),  multiplies))  
 ---
 
 ### Complete the following problems by editing the files below:
