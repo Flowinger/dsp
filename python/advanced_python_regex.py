@@ -1,12 +1,14 @@
 import pandas as pd
 import re
+from collections import Counter
+
 
 file1 = pd.read_csv('/Users/flowinger/ds/metis/metisgh/prework/dsp/python/faculty.csv', sep=',', skipinitialspace=True)
 faculty = open('/Users/flowinger/ds/metis/metisgh/prework/dsp/python/faculty.csv')
 
 
 def get_degrees(df):
-  '''Find the different degrees and their frequencies'''
+	'''Find the different degrees and their frequencies'''
 	degrees = re.findall(r'[A-Z].*[A-Z]', str(df['degree']))
 	degreeDict = {}
 	for degree in degrees:
@@ -27,6 +29,7 @@ def get_titles(df):
 		title = re.sub(r' is ', ' of ', title)
 		titles[title] = titles.get(title, 0) + 1
 	print(titles)
+	print('Number of titles: ' + str(sum(titles.values())))
 get_titles(file1)
 
 def get_titles_regex(file):
@@ -44,6 +47,7 @@ def get_titles_regex(file):
 	for match in matches:
 		match_count[match] = match_count.get(match, 0) + 1
 	print(match_count)
+	print('Number of titles: ' + str(sum(match_count.values())))
 get_titles_regex(faculty)
 
 def get_emails(file):
@@ -54,8 +58,14 @@ def get_emails(file):
 		file2.append(line)
 	emails = re.compile(r'\w*@.*?.edu')
 	matches = emails.findall(str(file2))
-	print(matches)
+	return matches
 get_emails(faculty)
+
+# print markdown table for Q3
+print('Email |')
+print('--- |')
+for i in get_emails(faculty):
+	print(i, ' |')
 
 def get_email_domains(file):
 	faculty = open('/Users/flowinger/ds/metis/metisgh/prework/dsp/python/faculty.csv')
@@ -66,6 +76,21 @@ def get_email_domains(file):
 	emails = re.compile(r'@.*?.edu')
 	matches = emails.findall(str(file2))
 	matches = list(set(matches))
-	print(matches, '\n', len(matches))
+	email_list = {}
+	for i in matches:
+		email_list[i] = 0
+		for x in file1['email']:
+			if re.search(i, x):
+				email_list[i] += 1
+	return email_list
 get_email_domains(faculty)
+
+# print markdown table for Q4
+print('Email domain | Count |')
+print('| --- | --- |')
+domains = get_email_domains(faculty)
+for i, j in domains.items():
+	print(i, ' |', j, ' |')
+
+
 
