@@ -26,14 +26,51 @@ Number of titles: 37
 
 #### Q2. Find how many different titles there are, and their frequencies:  Ex:  Assistant Professor, Professor
 ```
-Associate Professor of Biostatistics: 12, Assistant Professor of Biostatistics: 12, Professor of Biostatistics: 13
+{'Assistant Professor ': 12, 'Associate Professor ': 12, 'Professor ': 13}
+Number of titles: 37
 ```
 
 #### Q3. Search for email addresses and put them in a list.  Print the list of email addresses.
 
-```
-['bellamys@mail.med.upenn.edu', 'warren@upenn.edu', 'bryanma@upenn.edu', 'jinboche@upenn.edu', 'sellenbe@upenn.edu', 'jellenbe@mail.med.upenn.edu', 'ruifeng@upenn.edu', 'bcfrench@mail.med.upenn.edu', 'pgimotty@upenn.edu', 'wguo@mail.med.upenn.edu', 'hsu9@mail.med.upenn.edu', 'rhubb@mail.med.upenn.edu', 'whwang@mail.med.upenn.edu', 'mjoffe@mail.med.upenn.edu', 'jrlandis@mail.med.upenn.edu', 'liy3@email.chop.edu', 'mingyao@mail.med.upenn.edu', 'hongzhe@upenn.edu', 'rlocalio@upenn.edu', 'nanditam@mail.med.upenn.edu', 'knashawn@mail.med.upenn.edu', 'propert@mail.med.upenn.edu', 'mputt@mail.med.upenn.edu', 'sratclif@upenn.edu', 'michross@upenn.edu', 'jaroy@mail.med.upenn.edu', 'msammel@cceb.med.upenn.edu', 'shawp@upenn.edu', 'rshi@mail.med.upenn.edu', 'hshou@mail.med.upenn.edu', 'jshults@mail.med.upenn.edu', 'alisaste@mail.med.upenn.edu', 'atroxel@mail.med.upenn.edu', 'rxiao@mail.med.upenn.edu', 'sxie@mail.med.upenn.edu', 'dxie@upenn.edu', 'weiyang@mail.med.upenn.edu']
-```
+Email |
+--- |
+|  bellamys@mail.med.upenn.edu  |
+|  warren@upenn.edu  |
+|  bryanma@upenn.edu  |
+|  jinboche@upenn.edu  |
+|  sellenbe@upenn.edu  |
+|  jellenbe@mail.med.upenn.edu  |
+|  ruifeng@upenn.edu  |
+|  bcfrench@mail.med.upenn.edu  |
+|  pgimotty@upenn.edu  |
+|  wguo@mail.med.upenn.edu  |
+|  hsu9@mail.med.upenn.edu  |
+|  rhubb@mail.med.upenn.edu  |
+|  whwang@mail.med.upenn.edu  |
+|  mjoffe@mail.med.upenn.edu  |
+|  jrlandis@mail.med.upenn.edu  |
+|  liy3@email.chop.edu  |
+|  mingyao@mail.med.upenn.edu  |
+|  hongzhe@upenn.edu  |
+|  rlocalio@upenn.edu  |
+|  nanditam@mail.med.upenn.edu  |
+|  knashawn@mail.med.upenn.edu  |
+|  propert@mail.med.upenn.edu  |
+|  mputt@mail.med.upenn.edu  |
+|  sratclif@upenn.edu  |
+|  michross@upenn.edu  |
+|  jaroy@mail.med.upenn.edu  |
+|  msammel@cceb.med.upenn.edu  |
+|  shawp@upenn.edu  |
+|  rshi@mail.med.upenn.edu  |
+|  hshou@mail.med.upenn.edu  |
+|  jshults@mail.med.upenn.edu  |
+|  alisaste@mail.med.upenn.edu  |
+|  atroxel@mail.med.upenn.edu  |
+|  rxiao@mail.med.upenn.edu  |
+|  sxie@mail.med.upenn.edu  |
+|  dxie@upenn.edu  |
+|  weiyang@mail.med.upenn.edu  |
 
 
 
@@ -42,7 +79,12 @@ Associate Professor of Biostatistics: 12, Assistant Professor of Biostatistics: 
 ```
 {'@upenn.edu': 12, '@email.chop.edu': 1, '@mail.med.upenn.edu': 23, '@cceb.med.upenn.edu': 1}
 ```
-
+Email domain | Count |
+| --- | --- |
+@mail.med.upenn.edu  | 23  |
+@upenn.edu  | 12  |
+@cceb.med.upenn.edu  | 1  |
+@email.chop.edu  | 1  |
 
 Place your code in this file: [advanced_python_regex.py](python/advanced_python_regex.py)
 
