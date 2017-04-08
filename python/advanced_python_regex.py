@@ -48,6 +48,7 @@ def get_titles_regex(file):
 		match_count[match] = match_count.get(match, 0) + 1
 	print(match_count)
 	print('Number of titles: ' + str(sum(match_count.values())))
+	
 get_titles_regex(faculty)
 
 def get_emails(file):
