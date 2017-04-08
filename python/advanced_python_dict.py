@@ -24,7 +24,7 @@ def create_faculty_dict(df):
 		#title = title.replace(' is Biostatistics', '')
 		titles.append(re.findall(r'.*[\w+\sP]rofessor', title))
 	data['title'] = titles
-
+	
 	for i in range(len(data)-1):
 		if last_names[i] not in faculty_dict:
 			faculty_dict[last_names[i]] = [data['title'][i], data['degree'][i], data['email'][i]]
